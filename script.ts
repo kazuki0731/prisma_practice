@@ -4,11 +4,11 @@ const prisma = new PrismaClient();
 
 // A `main` function so that you can use async/await
 async function main() {
-  const results = await prisma.user.findMany({
+  const result = await prisma.user.findMany({
     // skip: 2, 
     // take: 2
   });
-  console.log(results);
+  console.log(result);
 }
 
 main()
