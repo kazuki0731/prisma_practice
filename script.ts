@@ -10,7 +10,7 @@ async function main() {
   });
   console.log(result);
 }
-// main
+
 main()
   .catch((e) => {
     throw e;
@@ -19,4 +19,3 @@ main()
     await prisma.$disconnect();
   });
 
-  // feature
