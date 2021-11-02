@@ -1,16 +1,20 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 // A `main` function so that you can use async/await
 async function main() {
-  // ... you will write your Prisma Client queries here
+  const result = await prisma.user.findMany({
+    // skip: 2, 
+    // take: 2
+  });
+  console.log(result);
 }
 
 main()
-  .catch(e => {
-    throw e
+  .catch((e) => {
+    throw e;
   })
   .finally(async () => {
-    await prisma.$disconnect()
-  })
+    await prisma.$disconnect();
+  });
